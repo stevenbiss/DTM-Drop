@@ -1,0 +1,23 @@
+1. Recommended step: Edit manifest.json file to limit domains that extension executes on. Edit the line:
+		"matches": [ "*://*/*" ],
+	To for example:
+		"matches": [ "*://*.hostname.com/*" ],
+
+2. Edit the content.js file to use your DTM staging library. Edit the paramter value to a .js file on line:
+		headerscript.src = "https://assets.adobedtm.com/<YOUR DTM STAGING LIBRARY>";
+	For example:
+		headerscript.src = "https://assets.adobedtm.com/1d9e06d7bf79e7d652hh54jj14f4157272d90778c32/satelliteLib-1d9e06d7bf79e7d652hh54jj14f4157272d90778c32-staging.js";
+
+3. Open Chrome
+4. Enter "chrome://extensions/" in the URL bar
+5. Drag full DTM Drop folder onto open extensions tab.
+6. Developer mode (tick box) will need to be enabled to use the extension as it has not been installed from the Chrome Store.
+
+Copy entire folder and repeat the above for as many unique DTM libraries & domains as required.
+Recommend renaming folder to "dtm-injector-<clientName>" for each instance.
+
+This tool should be useful for:
+
+	1.	Testing DTM rules being built before client has dropped container into their site
+	2.	Testing/experimenting your own library version of rules before building them into the client staging instance.
+	3.  Demos and workshops with clients where they can install and use DTM on their own live website.
